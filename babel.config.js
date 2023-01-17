@@ -9,5 +9,6 @@ module.exports = {
         useBuiltIns: "entry" // 防止有第三方包中用了别的不兼容的api,并需要在主入口引入corejs, regenerator-runtime/runtime
       },
     ],
+    ["@babel/preset-react"]
   ],
 };
