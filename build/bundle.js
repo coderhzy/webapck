@@ -2,6 +2,22 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/ts/math.ts":
+/*!************************!*\
+  !*** ./src/ts/math.ts ***!
+  \************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": function() { return /* binding */ sum; }
+/* harmony export */ });
+function sum(num1, num2) {
+  return num1 + num2;
+}
+
+/***/ }),
+
 /***/ "./src/react/App.jsx":
 /*!***************************!*\
   !*** ./src/react/App.jsx ***!
@@ -18,8 +34,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i.return && (_r = _i.return(), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+
 var App = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function () {
-  var _useState = useState(0),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
     _useState2 = _slicedToArray(_useState, 2),
     count = _useState2[0],
     setCount = _useState2[1];
@@ -27,7 +44,7 @@ var App = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.memo)(function () {
     onClick: function onClick(e) {
       return setCount(count + 1);
     }
-  }));
+  }, "+1"));
 });
 /* harmony default export */ __webpack_exports__["default"] = (App);
 
@@ -33492,10 +33509,12 @@ var __webpack_exports__ = {};
   !*** ./src/main.js ***!
   \*********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _react_App_jsx__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./react/App.jsx */ "./src/react/App.jsx");
+/* harmony import */ var _react_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./react/App */ "./src/react/App.jsx");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _ts_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ts/math */ "./src/ts/math.ts");
+
 
 
 
@@ -33507,11 +33526,13 @@ var obj = {
 };
 var nickname = 'hzy';
 console.log(nickname.includes('coder'));
+var total = (0,_ts_math__WEBPACK_IMPORTED_MODULE_3__["default"])(1, 3);
+console.log(total);
 
 // 编写react代码
 
 var app = react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot(document.querySelector('#app'));
-app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_react_App_jsx__WEBPACK_IMPORTED_MODULE_0__["default"], null));
+app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_react_App__WEBPACK_IMPORTED_MODULE_0__["default"], null));
 }();
 /******/ })()
 ;

@@ -1,6 +1,7 @@
-import App from './react/App.jsx'
+import App from './react/App'
 import React from 'react'
 import ReactDom from 'react-dom/client'
+import sum from './ts/math'
 
 const a = '111'
 
@@ -12,6 +13,8 @@ const nickname = 'hzy'
 
 console.log(nickname.includes('coder'))
 
+const total = sum(1,3);
+console.log(total);
 
 // 编写react代码
 
