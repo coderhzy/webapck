@@ -66,12 +66,12 @@ btn2.textContent = 'category';
 document.body.appendChild(btn1);
 document.body.appendChild(btn2);
 btn1.onclick = function () {
-  __webpack_require__.e(/*! import() */ "src_router_about_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/about */ "./src/router/about.js", 23)).then(function (res) {
-    console.log(res);
+  __webpack_require__.e(/*! import() | about */ "about").then(__webpack_require__.bind(__webpack_require__, /*! ./router/about */ "./src/router/about.js")).then(function (res) {
+    res.default();
   });
 };
 btn2.onclick = function () {
-  __webpack_require__.e(/*! import() */ "src_router_category_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/category */ "./src/router/category.js", 23)).then(function (res) {
+  __webpack_require__.e(/*! import() | category */ "category").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/category */ "./src/router/category.js", 23)).then(function (res) {
     console.log(res);
   });
 };

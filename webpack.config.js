@@ -18,6 +18,7 @@ module.exports = {
     filename: "[name]-bundle.js", 
     // 重新打包时,先将之前打包的文件夹删除掉
     clean: true,
+    chunkFilename: '[name]_chunk.js'
   },
   resolve: {
     extensions: [".js", ".json", ".wasm", ".ts",".jsx"],

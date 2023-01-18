@@ -38,13 +38,13 @@ document.body.appendChild(btn1)
 document.body.appendChild(btn2)
 
 btn1.onclick = () => {
-    import('./router/about').then(res => {
-        console.log(res);
+    import(/* webpackChunkName: "about"*/ './router/about').then(res => {
+        res.default()
     })
 }
 
 btn2.onclick = () => {
-    import('./router/category').then(res => {
+    import(/* webpackChunkName: "category" */'./router/category').then(res => {
         console.log(res);
     })
 }
