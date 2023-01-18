@@ -2,6 +2,7 @@ import App from './react/App'
 import React from 'react'
 import ReactDom from 'react-dom/client'
 import sum from './ts/math'
+import foo from './utils/foo'
 
 const a = '111'
 
@@ -48,3 +49,6 @@ btn2.onclick = () => {
         console.log(res);
     })
 }
+
+
+foo()
