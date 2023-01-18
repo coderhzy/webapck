@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const { ProvidePlugin } = require("webpack");
 module.exports = {
   entry: {
     // index: {
@@ -101,6 +102,12 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./index.html",
+    }),
+    new ProvidePlugin({
+      React: "react",
+      ReactDOM: "react-dom",
+      axios: "axios",
+      dayjs: "dayjs",
     }),
   ],
 };
