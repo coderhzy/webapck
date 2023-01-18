@@ -2,8 +2,15 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: {
-    index: './src/index.js',
-    main: './src/main.js'
+    index: {
+      import: "./src/index.js",
+      dependOn: "shared",
+    },
+    main: {
+      import: "./src/main.js",
+      dependOn: "shared",
+    },
+    shared: ["axios"] 
   },
   devtool: false, // 是否需要source-map
   output: {
