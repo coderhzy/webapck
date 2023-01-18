@@ -20,3 +20,11 @@ console.log(total);
 
 const app = ReactDom.createRoot(document.querySelector('#app'))
 app.render(<App />)
+
+
+// 请求axios
+import axios from 'axios'
+
+axios.get('/api/users/list').then(res => {
+    console.log(res.data);
+})
