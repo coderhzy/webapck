@@ -28,3 +28,23 @@ import axios from 'axios'
 axios.get('/api/users/list').then(res => {
     console.log(res.data);
 })
+
+
+const btn1 = document.createElement('button')
+const btn2 = document.createElement('button')
+btn1.textContent = 'about'
+btn2.textContent = 'category'
+document.body.appendChild(btn1)
+document.body.appendChild(btn2)
+
+btn1.onclick = () => {
+    import('./router/about').then(res => {
+        console.log(res);
+    })
+}
+
+btn2.onclick = () => {
+    import('./router/category').then(res => {
+        console.log(res);
+    })
+}

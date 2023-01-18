@@ -59,6 +59,22 @@ app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElem
 axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/users/list').then(function (res) {
   console.log(res.data);
 });
+var btn1 = document.createElement('button');
+var btn2 = document.createElement('button');
+btn1.textContent = 'about';
+btn2.textContent = 'category';
+document.body.appendChild(btn1);
+document.body.appendChild(btn2);
+btn1.onclick = function () {
+  __webpack_require__.e(/*! import() */ "src_router_about_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/about */ "./src/router/about.js", 23)).then(function (res) {
+    console.log(res);
+  });
+};
+btn2.onclick = function () {
+  __webpack_require__.e(/*! import() */ "src_router_category_js").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/category */ "./src/router/category.js", 23)).then(function (res) {
+    console.log(res);
+  });
+};
 
 /***/ }),
 
