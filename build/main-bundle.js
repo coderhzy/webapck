@@ -22,66 +22,6 @@ var Multiplication = function Multiplication(num1, num2) {
 
 /***/ }),
 
-/***/ "./src/main.js":
-/*!*********************!*\
-  !*** ./src/main.js ***!
-  \*********************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _react_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./react/App */ "./src/react/App.jsx");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _ts_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ts/math */ "./src/ts/math.ts");
-/* harmony import */ var _utils_foo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/foo */ "./src/utils/foo.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "./node_modules/axios/lib/axios.js");
-
-
-
-
-
-var a = '111';
-console.log(a);
-var obj = {
-  name: "hzy",
-  age: 299
-};
-var nickname = 'hzy';
-console.log(nickname.includes('coder'));
-var total = (0,_ts_math__WEBPACK_IMPORTED_MODULE_3__["default"])(1, 3);
-console.log(total);
-
-// 编写react代码
-
-var app = react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot(document.querySelector('#app'));
-app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_react_App__WEBPACK_IMPORTED_MODULE_0__["default"], null));
-
-// 请求axios
-
-axios__WEBPACK_IMPORTED_MODULE_5__["default"].get('/api/users/list').then(function (res) {
-  console.log(res.data);
-});
-var btn1 = document.createElement('button');
-var btn2 = document.createElement('button');
-btn1.textContent = 'about';
-btn2.textContent = 'category';
-document.body.appendChild(btn1);
-document.body.appendChild(btn2);
-btn1.onclick = function () {
-  __webpack_require__.e(/*! import() | about */ "about").then(__webpack_require__.bind(__webpack_require__, /*! ./router/about */ "./src/router/about.js")).then(function (res) {
-    res.default();
-  });
-};
-btn2.onclick = function () {
-  __webpack_require__.e(/*! import() | category */ "category").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/category */ "./src/router/category.js", 23)).then(function (res) {
-    console.log(res);
-  });
-};
-(0,_utils_foo__WEBPACK_IMPORTED_MODULE_4__["default"])();
-
-/***/ }),
-
 /***/ "./src/react/App.jsx":
 /*!***************************!*\
   !*** ./src/react/App.jsx ***!
@@ -89,7 +29,7 @@ btn2.onclick = function () {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -128,6 +68,68 @@ function foo() {
   return 'bar';
 }
 
+/***/ }),
+
+/***/ "./node_modules/react-dom/client.js":
+/*!******************************************!*\
+  !*** ./node_modules/react-dom/client.js ***!
+  \******************************************/
+/***/ (function(__unused_webpack_module, exports, __webpack_require__) {
+
+
+
+var m = __webpack_require__(/*! react-dom */ "react-dom");
+if (false) {} else {
+  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
+  exports.createRoot = function(c, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.createRoot(c, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+  exports.hydrateRoot = function(c, h, o) {
+    i.usingClientEntryPoint = true;
+    try {
+      return m.hydrateRoot(c, h, o);
+    } finally {
+      i.usingClientEntryPoint = false;
+    }
+  };
+}
+
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ (function(module) {
+
+module.exports = React;
+
+/***/ }),
+
+/***/ "react-dom":
+/*!***************************!*\
+  !*** external "ReactDOM" ***!
+  \***************************/
+/***/ (function(module) {
+
+module.exports = ReactDOM;
+
+/***/ }),
+
+/***/ "axios":
+/*!************************!*\
+  !*** external "axios" ***!
+  \************************/
+/***/ (function(module) {
+
+module.exports = axios;
+
 /***/ })
 
 /******/ 	});
@@ -144,16 +146,13 @@ function foo() {
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -356,15 +355,6 @@ function foo() {
 /******/ 		};
 /******/ 	}();
 /******/ 	
-/******/ 	/* webpack/runtime/node module decorator */
-/******/ 	!function() {
-/******/ 		__webpack_require__.nmd = function(module) {
-/******/ 			module.paths = [];
-/******/ 			if (!module.children) module.children = [];
-/******/ 			return module;
-/******/ 		};
-/******/ 	}();
-/******/ 	
 /******/ 	/* webpack/runtime/publicPath */
 /******/ 	!function() {
 /******/ 		var scriptUrl;
@@ -499,12 +489,65 @@ function foo() {
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-/******/ 	
-/******/ 	// startup
-/******/ 	// Load entry module and return exports
-/******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["vendors-node_modules_axios_lib_axios_js","vendors-node_modules_react-dom_client_js"], function() { return __webpack_require__("./src/main.js"); })
-/******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
-/******/ 	
+var __webpack_exports__ = {};
+// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+!function() {
+/*!*********************!*\
+  !*** ./src/main.js ***!
+  \*********************/
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _react_App__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./react/App */ "./src/react/App.jsx");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
+/* harmony import */ var _ts_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ts/math */ "./src/ts/math.ts");
+/* harmony import */ var _utils_foo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/foo */ "./src/utils/foo.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+
+
+
+
+
+var a = '111';
+console.log(a);
+var obj = {
+  name: "hzy",
+  age: 299
+};
+var nickname = 'hzy';
+console.log(nickname.includes('coder'));
+var total = (0,_ts_math__WEBPACK_IMPORTED_MODULE_3__["default"])(1, 3);
+console.log(total);
+
+// 编写react代码
+
+var app = react_dom_client__WEBPACK_IMPORTED_MODULE_2__.createRoot(document.querySelector('#app'));
+app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElement(_react_App__WEBPACK_IMPORTED_MODULE_0__["default"], null));
+
+// 请求axios
+
+axios__WEBPACK_IMPORTED_MODULE_5___default().get('/api/users/list').then(function (res) {
+  console.log(res.data);
+});
+var btn1 = document.createElement('button');
+var btn2 = document.createElement('button');
+btn1.textContent = 'about';
+btn2.textContent = 'category';
+document.body.appendChild(btn1);
+document.body.appendChild(btn2);
+btn1.onclick = function () {
+  __webpack_require__.e(/*! import() | about */ "about").then(__webpack_require__.bind(__webpack_require__, /*! ./router/about */ "./src/router/about.js")).then(function (res) {
+    res.default();
+  });
+};
+btn2.onclick = function () {
+  __webpack_require__.e(/*! import() | category */ "category").then(__webpack_require__.t.bind(__webpack_require__, /*! ./router/category */ "./src/router/category.js", 23)).then(function (res) {
+    console.log(res);
+  });
+};
+(0,_utils_foo__WEBPACK_IMPORTED_MODULE_4__["default"])();
+}();
+__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ })()
 ;

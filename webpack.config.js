@@ -22,6 +22,11 @@ module.exports = {
     clean: true,
     chunkFilename: "[name]_chunk.js",
   },
+  externals: {
+    react: 'React',
+    axios: 'axios',
+    'react-dom': 'ReactDOM'
+  },
   resolve: {
     extensions: [".js", ".json", ".wasm", ".ts", ".jsx"],
   },
