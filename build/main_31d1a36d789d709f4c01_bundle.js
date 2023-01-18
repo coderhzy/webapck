@@ -589,6 +589,7 @@ btn2.onclick = function () {
   });
 };
 (0,_utils_foo__WEBPACK_IMPORTED_MODULE_4__["default"])();
+console.log("修改111");
 var now = dayjs().format('YYYY-MM-DD HH:mm:ss');
 console.log('使用dayjs获取最新值', now);
 }();

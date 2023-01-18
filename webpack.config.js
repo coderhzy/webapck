@@ -19,7 +19,7 @@ module.exports = {
   devtool: false, // 是否需要source-map
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "[name]-bundle.js",
+    filename: "[name]_[contenthash]_bundle.js", // 建议使用contenthash
     // 重新打包时,先将之前打包的文件夹删除掉
     clean: true,
     chunkFilename: "[name]_chunk.js",
