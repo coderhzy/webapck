@@ -3,6 +3,7 @@ import React from 'react'
 import ReactDom from 'react-dom/client'
 import sum from './ts/math'
 import foo from './utils/foo'
+import './css/abc.css'
 
 const a = '111'
 

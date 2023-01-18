@@ -82,6 +82,19 @@ function foo() {
 
 /***/ }),
 
+/***/ "./src/css/abc.css":
+/*!*************************!*\
+  !*** ./src/css/abc.css ***!
+  \*************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/react-dom/client.js":
 /*!******************************************!*\
   !*** ./node_modules/react-dom/client.js ***!
@@ -295,6 +308,15 @@ module.exports = axios;
 /******/ 		__webpack_require__.u = function(chunkId) {
 /******/ 			// return url for filenames based on template
 /******/ 			return "" + chunkId + "_chunk.js";
+/******/ 		};
+/******/ 	}();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	!function() {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.miniCssF = function(chunkId) {
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
 /******/ 		};
 /******/ 	}();
 /******/ 	
@@ -519,9 +541,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
 /* harmony import */ var _ts_math__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ts/math */ "./src/ts/math.ts");
 /* harmony import */ var _utils_foo__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils/foo */ "./src/utils/foo.js");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! axios */ "axios");
-/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _css_abc_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./css/abc.css */ "./src/css/abc.css");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! axios */ "axios");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_6__);
 /* provided dependency */ var dayjs = __webpack_require__(/*! dayjs */ "./node_modules/dayjs/dayjs.min.js");
+
 
 
 
@@ -545,7 +569,7 @@ app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElem
 
 // 请求axios
 
-axios__WEBPACK_IMPORTED_MODULE_5___default().get('/api/users/list').then(function (res) {
+axios__WEBPACK_IMPORTED_MODULE_6___default().get('/api/users/list').then(function (res) {
   console.log(res.data);
 });
 var btn1 = document.createElement('button');

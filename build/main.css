@@ -1,0 +1,14 @@
+/*!*******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/css/abc.css ***!
+  \*******************************************************************/
+body{
+    background-color: skyblue;
+    color: red;
+}
+
+button{
+    background-color: purple;
+    color: white;
+}
+
+

@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 module.exports = {
   entry: {
     // index: {
@@ -24,9 +25,9 @@ module.exports = {
     chunkFilename: "[name]_chunk.js",
   },
   externals: {
-    react: 'React',
-    axios: 'axios',
-    'react-dom': 'ReactDOM'
+    react: "React",
+    axios: "axios",
+    "react-dom": "ReactDOM",
   },
   resolve: {
     extensions: [".js", ".json", ".wasm", ".ts", ".jsx"],
@@ -54,7 +55,7 @@ module.exports = {
       chunks: "all",
       // maxSize: 20000,
       // minSize: 10000,
-    cacheGroups: {
+      cacheGroups: {
         vendors: {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
@@ -69,7 +70,7 @@ module.exports = {
           test: /[\\/]src[\\/]/,
           priority: -30,
           filename: "[name]_src.js",
-        }
+        },
       },
     },
   },
@@ -97,6 +98,14 @@ module.exports = {
           loader: "babel-loader",
         },
       },
+      {
+        test: /\.css$/,
+        use: [
+          // 'style-loader',
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+        ],
+      },
     ],
   },
   plugins: [
@@ -108,6 +117,9 @@ module.exports = {
       ReactDOM: "react-dom",
       axios: "axios",
       dayjs: "dayjs",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "[name].css",
     }),
   ],
 };
