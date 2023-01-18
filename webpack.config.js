@@ -1,11 +1,14 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
-  entry: "./src/main.js",
+  entry: {
+    index: './src/index.js',
+    main: './src/main.js'
+  },
   devtool: false, // 是否需要source-map
   output: {
     path: path.resolve(__dirname, "./build"),
-    filename: "bundle.js",
+    filename: "[name]-bundle.js", 
     // 重新打包时,先将之前打包的文件夹删除掉
     clean: true,
   },

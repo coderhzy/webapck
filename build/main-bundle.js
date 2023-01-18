@@ -37500,7 +37500,7 @@ app.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default().createElem
 
 // 请求axios
 
-axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/users/list').then(function (res) {
+axios__WEBPACK_IMPORTED_MODULE_4__["default"].get('/api/users/list').then(function (res) {
   console.log(res.data);
 });
 }();
