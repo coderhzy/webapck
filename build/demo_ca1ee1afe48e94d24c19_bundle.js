@@ -1,1 +1,0 @@
-console.log("Hello World"),function(o,l){console.log("foo function exec~"),console.log(o,l)}();

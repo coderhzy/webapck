@@ -7,7 +7,7 @@ function foo (num1,num2) {
     console.log(arguments[0],arguments[1])
 }
 
-foo();
+foo(1,232323);
 
 
 const obj  = {
