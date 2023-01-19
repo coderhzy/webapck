@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
 module.exports = {
   entry: {
     // index: {
@@ -15,7 +16,7 @@ module.exports = {
     // },
     // shared: ["axios"]
     // index: "./src/index.js",
-    // main: "./src/main.js",
+    main: "./src/main.js",
     demo: './src/demo.js'
   },
   devtool: false, // 是否需要source-map
@@ -84,7 +85,8 @@ module.exports = {
             arguments: true
           }
         }
-      })
+      }),
+      new CSSMinimizerPlugin()
     ] 
   },
   module: {
