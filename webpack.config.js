@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { ProvidePlugin } = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 module.exports = {
   entry: {
     // index: {
@@ -13,8 +14,9 @@ module.exports = {
     //   dependOn: "shared",
     // },
     // shared: ["axios"]
-    index: "./src/index.js",
-    main: "./src/main.js",
+    // index: "./src/index.js",
+    // main: "./src/main.js",
+    demo: './src/demo.js'
   },
   devtool: false, // 是否需要source-map
   output: {
@@ -73,6 +75,17 @@ module.exports = {
         },
       },
     },
+    minimize: true,
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+        terserOptions: {
+          compress: {
+            arguments: true
+          }
+        }
+      })
+    ] 
   },
   module: {
     rules: [
