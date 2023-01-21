@@ -19,9 +19,9 @@ const getCommonConfig= function(isPro){
       //   dependOn: "shared",
       // },
       // shared: ["axios"]
-      // index: "./src/index.js",
-      main: "./src/main.js",
-      demo: './src/demo.js'
+      index: "./src/index.js",
+      // main: "./src/main.js",
+      // demo: './src/demo.js'
     },
     devtool: isPro ? false : 'source-map', // 是否需要source-map
     output: {

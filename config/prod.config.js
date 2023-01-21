@@ -6,6 +6,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 module.exports = {
   // 优化配置
   optimization: {
+    usedExports: true,
     chunkIds: "named",
     // 代码分割
     splitChunks: {
