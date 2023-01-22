@@ -21,7 +21,7 @@ const getCommonConfig= function(isPro){
       // shared: ["axios"]
       index: "./src/index.js",
       // main: "./src/main.js",
-      // demo: './src/demo.js'
+      demo: './src/demo.js'
     },
     devtool: isPro ? false : 'source-map', // 是否需要source-map
     output: {

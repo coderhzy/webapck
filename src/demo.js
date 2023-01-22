@@ -1,4 +1,6 @@
 
+import './css/abc.css'
+
 const message = 'Hello World';
 console.log(message);
 
@@ -16,3 +18,9 @@ const obj  = {
         return 'bar'
     }
 }
+
+// 添加div , 并且添加className
+const divEl = document.createElement('div')
+divEl.className = 'box'
+divEl.innerHTML = 'hello world'
+document.body.appendChild(divEl)

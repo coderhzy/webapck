@@ -8,3 +8,11 @@ button{
     color: white;
 }
 
+.title{
+    color: green;
+    background-color: yellow;
+}
+
+.box {
+    color: aquamarine;
+}

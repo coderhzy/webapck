@@ -1,0 +1,1 @@
+!function(){"use strict";console.log("Hello World"),function(o,e){console.log("foo function exec~"),console.log(o,e)}(1,232323);var o=document.createElement("div");o.className="box",o.innerHTML="hello world",document.body.appendChild(o)}();

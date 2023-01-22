@@ -2,6 +2,14 @@ const TerserPlugin = require("terser-webpack-plugin");
 const CSSMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')
+const glob = require('glob-all')
+const path = require('path')
+const PATHS = {
+  src: path.join(__dirname, '../src')
+}
+
+console.log(PATHS.src);
 
 module.exports = {
   // 优化配置
@@ -48,6 +56,14 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "[name].css",
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+      safelist: function(){
+        return {
+          standard: ['body']
+        }
+      }
+    })
   ],
 };
