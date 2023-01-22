@@ -6,6 +6,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const {merge } = require('webpack-merge')
 const devConfig = require('./dev.config')
 const prodConfig = require('./prod.config')
+const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+
+const smp = new SpeedMeasurePlugin()
 
 const getCommonConfig= function(isPro){
   return {
@@ -65,7 +68,8 @@ const getCommonConfig= function(isPro){
         {
           test: /\.css$/,
           use: [
-            isPro ? MiniCssExtractPlugin.loader : "style-loader",
+            'style-loader',
+            // isPro ? MiniCssExtractPlugin.loader : "style-loader", // 生产环境下使用MiniCssExtractPlugin.loader和SpeedMeasurePlugin互斥
             "css-loader",
           ],
         },
@@ -96,5 +100,6 @@ const getCommonConfig= function(isPro){
 module.exports = function(env){
   const isPro = env.production
   let mergeConfig = isPro ? prodConfig : devConfig
-  return merge(getCommonConfig(isPro), mergeConfig)
+  const finalConfig = merge(getCommonConfig(isPro), mergeConfig)
+  return smp.wrap(finalConfig)
 }
