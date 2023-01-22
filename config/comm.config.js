@@ -74,6 +74,13 @@ const getCommonConfig= function(isPro){
     plugins: [
       new HtmlWebpackPlugin({
         template: "./index.html",
+        minify: isPro ? {
+          removeComments: true, // 压缩时候移除注释
+          collapseWhitespace: true, // 压缩时候移除空格
+          removeAttributeQuotes: true, // 压缩时候移除属性的引号
+          removeEmptyAttributes: true, // 压缩时候移除空属性
+          removeRedundantAttributes: true, // 压缩时候移除多余属性
+        } : false,
       }),
       new ProvidePlugin({
         React: "react",
