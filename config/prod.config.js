@@ -5,7 +5,8 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { PurgeCSSPlugin } = require('purgecss-webpack-plugin')
 const webpack = require('webpack')
 const glob = require('glob-all')
-const path = require('path')
+const path = require('path');
+const CompressionPlugin = require("compression-webpack-plugin");
 const PATHS = {
   src: path.join(__dirname, '../src')
 }
@@ -66,6 +67,12 @@ module.exports = {
         }
       }
     }),
-    new webpack.optimize.ModuleConcatenationPlugin()
+    new webpack.optimize.ModuleConcatenationPlugin(),
+    new CompressionPlugin({
+      test: /\.js$|\.css$/,
+      // threshold: 10240,
+      minRatio: 0.8,
+      algorithm: 'gzip' 
+    })
   ],
 };
