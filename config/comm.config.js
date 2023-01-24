@@ -7,6 +7,7 @@ const {merge } = require('webpack-merge')
 const devConfig = require('./dev.config')
 const prodConfig = require('./prod.config')
 const SpeedMeasurePlugin = require('speed-measure-webpack-plugin')
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 const smp = new SpeedMeasurePlugin()
 
@@ -61,7 +62,7 @@ const getCommonConfig= function(isPro){
           test: /\.ts$/,
           exclude: /node_modules/,
           use: {
-            // loader: "ts-loader" // 不推荐使用,没办法增加ployfill
+            // loader: "ts-loader" // 不推荐使用,没办法增加polyfill
             loader: "babel-loader",
           },
         },
@@ -92,7 +93,9 @@ const getCommonConfig= function(isPro){
         axios: "axios",
         dayjs: "dayjs",
       }),
-      new CleanWebpackPlugin()
+      new CleanWebpackPlugin(),
+      // 对打包后的结果进行分析
+      new BundleAnalyzerPlugin()
     ],
   };
 }

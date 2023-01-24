@@ -6,7 +6,7 @@
   "scripts": {
     "serve": "webpack serve --mode development --config ./config/comm.config.js --env development",
     "build:dev": "webpack --mode development --config ./config/comm.config.js --env development",
-    "build:pro": "webpack --mode production --config ./config/comm.config.js --env production",
+    "build:pro": "webpack --mode production --config ./config/comm.config.js --env production --profile --json=stats.json",
     "test": "echo \"Error: no test specified\" && exit 1",
     "ts-check-watch": "tsc --noEmit --watch"
   },
@@ -45,6 +45,7 @@
     "speed-measure-webpack-plugin": "^1.5.0",
     "terser": "^5.16.1",
     "webpack": "^5.75.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-dev-server": "^4.11.1"
   }
 }
